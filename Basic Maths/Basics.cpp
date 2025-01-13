@@ -1,5 +1,35 @@
 #include<iostream>
+#include<vector>
 using namespace std;
+
+void getdivisors(int n){
+    vector<int> divisors;
+    for(int i=1;i<=n;i++){
+        if(n%i==0){
+            divisors.push_back(i);
+        }
+    }
+    for(int i=0;i<divisors.size();i++){
+        cout<<divisors[i]<<" ";
+    }
+
+}
+
+void isPalindrome(int n){
+    int rev=0;
+    int originaln = n;
+    while(n>0){
+        int lastdigit = n%10;
+        rev = rev*10 + lastdigit;
+        n = n/10;
+    }
+    if(rev==originaln){
+        cout<<"Palindrome";
+    }
+    else{
+        cout<<"Not Palindrome";
+    }
+}
 
 void isArmstrong(int n){
     int sum=0;
@@ -67,7 +97,9 @@ void getreverse(int n){
 int main(){
     int n;
     cin>>n;
-    getsum(n);
-    isPrime(n);
+    // getsum(n);
+    // isPrime(n);
+    // isPalindrome(n);
+    getdivisors(n);
     return 0;
 }
