@@ -16,10 +16,17 @@ void printusingBacktracking(int n){
     printusingBacktracking(n-1);
     cout<<n<<endl;
 }
+int sumRecursion(int n){
+    if(n==0){
+        return 0;
+    }
+    return n+sumRecursion(n-1);
+}
 
 int main()
 {
-    printname(5);
-    printusingBacktracking(5);
+    // printname(5);
+    // printusingBacktracking(5);
+    cout<<sumRecursion(5);
     return 0;
 }
