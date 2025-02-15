@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
 void largestinArray(int arr[], int n)
@@ -56,13 +57,24 @@ void checkSorted(int arr[], int n){
     }
 }
 
+void reverseArray(int arr[], int n){
+   int s=0, e= n-1;
+   while(s<e){
+    swap(arr[s++],arr[e--]);
+   }
+   for(int i = 0; i < n; i++){
+       cout << arr[i] << " ";
+   }
+}
+
 int main()
 {
     int arr [] = { 10, 20, 30, 40, 50};
     int n = sizeof(arr) / sizeof(arr[0]);
     //largestinArray(arr, n);
     //secondLargest(arr, n);
-    checkSorted(arr, n);
+    //checkSorted(arr, n);
+    reverseArray(arr, n);
     
 
     return 0;
