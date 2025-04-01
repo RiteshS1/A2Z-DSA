@@ -95,7 +95,73 @@ int main()
     // }
     // cout << endl;
 
-    
+    //longest subbaray with sum k
+    // vector<int> v = {10, 20, 30, 40, 50,60};
+    // int k = 90;
+    // int n = v.size();
+    // unordered_map<int, int> m;
+    // int sum = 0;
+    // int maxLength = 0;
+    // for(int i = 0; i < n; i++){
+    //     sum += v[i];
+    //     if(sum == k){
+    //         maxLength = max(maxLength, i+1);
+    //     }
+    //     if(m.find(sum - k) != m.end()){
+    //         maxLength = max(maxLength, i - m[sum - k]);
+    //     }
+    //     if(m.find(sum) == m.end()){
+    //         m[sum] = i;
+    //     }
+    // }
+    // cout << "Max length is: " << maxLength << endl;
+
+    //longest subarray sum with two pointers
+    vector<int> v = {1,1,2,1,1,1,3,1,2};
+    // int k = 6;
+    // int start =0;
+    // int end =0;
+    // int n = v.size();
+
+    // int sum =v[0];
+    // int maxLen =0;
+    // //ab sbse phle to sum lenge and fir shrink move shrink move krte chlenge
+    // while(end<n){
+    //     if(start<=end && sum>k ){
+    //         sum -= v[start];
+    //         start++;
+    //     }
+    //     if(sum == k){
+    //         maxLen = max(maxLen,end-start+1);
+    //     }
+    //     end++;
+    //     if(end < n){
+    //         sum += v[end];
+    //     }
+
+    // }
+    // cout<<maxLen;
+
+    int n = v.size();
+    int cnt = 0; 
+    int current; 
+
+    for (int i = 0; i < n; i++) {
+        if (cnt == 0) {
+            cnt = 1;
+            current = v[i];
+        }
+        else if ( current== v[i]) cnt++;
+        else cnt--;
+    }
+    int cnt1 = 0;
+    for(int i = 0; i < n; i++) {
+        if(v[i] == current) cnt1++;
+    }
+    if(cnt1 > (n / 2)){
+        cout<<current;
+    }
+
 
     return 0;
 }
