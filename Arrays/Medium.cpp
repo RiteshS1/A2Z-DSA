@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <climits>
 
-using namespace std;
+using namespace std;  
 int main()
 {
     // vector<int> v = {1, 1, 3, 3, 4,1,3,1,4};
@@ -66,7 +66,36 @@ int main()
     //     maxSum = max(maxSum, sum);
     // }
     // cout << "Max sum is: " << maxSum << endl;
+
+
+    //print all the subbarrays with loops
+    // vector<int> v = {1, 2, 3, 4};
+    // int n = v.size();
+    // for(int i = 0; i < n; i++){
+    //     for(int j = i; j < n; j++){
+    //         for(int k = i; k <= j; k++){
+    //             cout << v[k] << " ";
+    //         }
+    //         cout << endl;
+    //     }
+    // }
+
+    //print sum of subarrays with prefix sum
+    // vector<int> v = {1, 2, 3, 4};
+    // int n = v.size(); //4
+    // int prefix[n+1]; //5
+    // prefix[0] = 0;
+    // for(int i = 1; i <= n; i++){ //1 se 4
+    //     prefix[i] = prefix[i-1] + v[i-1]; //prefix[1] =1, prefix[2] = 3, prefix[3] = 6, prefix[4] = 10
+    // }
+    // for(int i = 0; i < n; i++){ //0 se 3
+    //     for(int j = i; j < n; j++){ 
+    //         cout << prefix[j+1] - prefix[i] << " "; 
+    //     }
+    // }
+    // cout << endl;
+
     
-   
+
     return 0;
 }
