@@ -117,30 +117,50 @@ int main()
     // cout << "Max length is: " << maxLength << endl;
 
     //longest subarray sum with two pointers
-    vector<int> v = {1,2,3,4,2,4,5,1,6};
-    int k = 6;
-    int start =0;
-    int end =0;
+    vector<int> v = {1,1,2,1,1,1,3,1,2};
+    // int k = 6;
+    // int start =0;
+    // int end =0;
+    // int n = v.size();
+
+    // int sum =v[0];
+    // int maxLen =0;
+    // //ab sbse phle to sum lenge and fir shrink move shrink move krte chlenge
+    // while(end<n){
+    //     if(start<=end && sum>k ){
+    //         sum -= v[start];
+    //         start++;
+    //     }
+    //     if(sum == k){
+    //         maxLen = max(maxLen,end-start+1);
+    //     }
+    //     end++;
+    //     if(end < n){
+    //         sum += v[end];
+    //     }
+
+    // }
+    // cout<<maxLen;
+
     int n = v.size();
+    int cnt = 0; 
+    int current; 
 
-    int sum =v[0];
-    int maxLen =0;
-    //ab sbse phle to sum lenge and fir shrink move shrink move krte chlenge
-    while(end<n){
-        if(start<=end && sum>k ){
-            sum -= v[start];
-            start++;
+    for (int i = 0; i < n; i++) {
+        if (cnt == 0) {
+            cnt = 1;
+            current = v[i];
         }
-        if(sum == k){
-            maxLen = max(maxLen,end-start+1);
-        }
-        end++;
-        if(end < n){
-            sum += v[end];
-        }
-
+        else if ( current== v[i]) cnt++;
+        else cnt--;
     }
-    cout<<maxLen;
+    int cnt1 = 0;
+    for(int i = 0; i < n; i++) {
+        if(v[i] == current) cnt1++;
+    }
+    if(cnt1 > (n / 2)){
+        cout<<current;
+    }
 
 
     return 0;
